@@ -39,7 +39,7 @@ class Spoof(Plugin):
         self.dhcp = options.dhcp
         self.dhcpcfg = "./config_files/dhcp.cfg" or options.dhcpcfg
         self.shellshock = options.shellshock
-        self.cmd = "echo 'pwned'" or options.cmd
+        self.cmd = options.cmd if options.cmd else "echo 'pwned'"
         self.gateway = options.gateway
         #self.summary = options.summary
         self.target = options.target
